@@ -5,11 +5,13 @@ import { PickEmAppRoutingModule } from './pick-em-app-routing.module';
 import { PickEmAppComponent } from './pick-em-app.component';
 import { TeamListComponent } from './team-list.component';
 import { TeamService } from './shared/services/team.service';
+import { MatchupContainerComponent } from './matchup-container/matchup-container.component';
 
 @NgModule({
   declarations: [
     PickEmAppComponent,
-    TeamListComponent
+    TeamListComponent,
+    MatchupContainerComponent
   ],
   imports: [
     BrowserModule,

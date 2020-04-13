@@ -1,13 +1,14 @@
-import {ITeamModel} from '../models/team.model';
-import {Injectable} from '@angular/core';
+import { ITeamModel } from '../models/team.model';
+import { Injectable } from '@angular/core';
+import { IMatchupModel } from '../models/matchup.model';
 
 @Injectable()
 export class TeamService {
-    getMatchUps(teams) {
+    getMatchUps(teams): IMatchupModel[] { // ToDo: remove this way of retrieving match ups for appropriate way
       const array = teams;
       let team;
       let team2;
-      let matchup = [];
+      let matchup: IMatchupModel = [];
       const matchups = [];
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i <= 16; i++) {
@@ -16,9 +17,9 @@ export class TeamService {
           team2 = this.getRandomTeam(array);
           team.isHome = true;
           team2.isHome = false;
-          matchup.push(team);
-          matchup.push(team2);
-          if (matchup.length === 2) {
+          matchup.homeTeam = team;
+          matchup.awayTeam = team2;
+          if (matchup) {
             matchups.push(matchup);
             matchup = [];
           }

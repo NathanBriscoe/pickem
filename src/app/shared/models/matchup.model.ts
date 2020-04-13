@@ -1,4 +1,4 @@
-import {ITeamModel} from './team.model';
+import { ITeamModel } from './team.model';
 
 export interface IMatchupModel {
   id: number;

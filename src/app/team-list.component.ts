@@ -1,23 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ITeamModel} from './shared/models/team.model';
-import {TeamService} from './shared/services/team.service';
+import { Component, Input } from '@angular/core';
+import { ITeamModel } from './shared/models/team.model';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'team-list',
+  selector: 'app-team-list',
   templateUrl: 'team-list.component.html'
 })
-export class TeamListComponent implements OnInit {
+export class TeamListComponent {
   @Input() teams: ITeamModel[] = [];
-
-  constructor(private teamService: TeamService) {
-
-  }
-
-  ngOnInit(): void {
-    this.teams = this.teamService.getTeams();
-    const matchups = this.teamService.getMatchUps(this.teams);
-    console.log('matchups: ' , matchups);
-  }
 }
 
