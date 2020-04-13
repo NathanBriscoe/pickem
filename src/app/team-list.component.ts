@@ -16,23 +16,8 @@ export class TeamListComponent implements OnInit {
 
   ngOnInit(): void {
     this.teams = this.teamService.getTeams();
-    this.getMatchUps();
-  }
-
-  private getMatchUps() {
-    const array = this.teams;
-    let team;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i <= 31; i++) {
-      team = this.getRandomTeam(array);
-      console.log('team: ', team);
-
-    }
-  }
-
-  private getRandomTeam(array): ITeamModel {
-    const randomNumber = Math.floor(Math.random() * Math.floor(array.length));
-    return array.splice(randomNumber, 1)[0];
+    const matchups = this.teamService.getMatchUps(this.teams);
+    console.log('matchups: ' , matchups);
   }
 }
 

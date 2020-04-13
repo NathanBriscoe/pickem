@@ -3,6 +3,35 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class TeamService {
+    getMatchUps(teams) {
+      const array = teams;
+      let team;
+      let team2;
+      let matchup = [];
+      const matchups = [];
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i <= 16; i++) {
+        if (array.length !== 0) {
+          team = this.getRandomTeam(array);
+          team2 = this.getRandomTeam(array);
+          team.isHome = true;
+          team2.isHome = false;
+          matchup.push(team);
+          matchup.push(team2);
+          if (matchup.length === 2) {
+            matchups.push(matchup);
+            matchup = [];
+          }
+        }
+      }
+      return matchups;
+    }
+
+    private getRandomTeam(array): ITeamModel {
+      const randomNumber = Math.floor(Math.random() * Math.floor(array.length));
+      return array.splice(randomNumber, 1)[0];
+    }
+
     getTeams(): ITeamModel[] {
       return [{
         id: 1,
