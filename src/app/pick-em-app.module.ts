@@ -8,12 +8,14 @@ import { WeeklyMatchupsComponent } from './weekly-matchups/weekly-matchups.compo
 import { PickEmAppRoutingModule } from './pick-em-app-routing.module';
 import { TeamService } from './shared/services/team.service';
 import { appRoutes } from './routes';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     PickEmAppComponent,
     MatchupDetailsComponent,
-    WeeklyMatchupsComponent
+    WeeklyMatchupsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

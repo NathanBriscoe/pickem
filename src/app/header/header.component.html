@@ -1,0 +1,28 @@
+<h1 style="width: 90%;">{{title}}</h1>
+<div *ngIf="user?.isValid"  style="width: 10%">
+  <span style="width: 100%"><h4>Welcome {{user.name}}</h4></span>
+</div>
+<div *ngIf="!user?.isValid">
+  <button class="fa fa-trash-alt">Sing up</button>
+  <div>
+
+    <!--ToDo: add this basic form to a new loginComponent-->
+    <form>
+      <span style="width: 100%">My Account</span>
+      <label>
+        <input placeholder="Display Name">
+      </label>
+      <br>
+      <label>
+        <input placeholder="Password">
+      </label>
+      <br>
+      <span style="width: 100%">
+          <input type="checkbox">Remember Me
+        </span>
+      <br>
+      <button>Submit</button>
+    </form>
+
+  </div>
+</div>

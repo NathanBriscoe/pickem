@@ -10,15 +10,6 @@ import { IUserModel } from './shared/models/user.model';
     styleUrls: ['./pick-em-app.component.scss']
 })
 export class PickEmAppComponent implements OnInit {
-  title = 'Pick\'em';
-  matchups: IMatchupModel[];
-  user: IUserModel = {
-      id: 1,
-      name: 'Nathan',
-      email: 'n.briscoe1@gmail.com',
-      password: '12345',
-      isAdmin: true,
-    };
 
   constructor() {
 
