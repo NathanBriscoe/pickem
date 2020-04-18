@@ -3,16 +3,4 @@
   <span><h4>Welcome {{user.name}}</h4></span>
 </header>
 
-<div class="content-body">
-  <div class="table">
-    <h3></h3>
-    <table style="width:75%">
-      <tr align="center">
-        <th>Match ups</th>
-      </tr>
-        <div *ngFor="let matchup of matchups" align="center">
-          <app-matchup-container [matchup]="matchup"></app-matchup-container>
-        </div>
-    </table>
-  </div>
-</div>
+<router-outlet></router-outlet>

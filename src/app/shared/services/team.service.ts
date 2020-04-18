@@ -1,6 +1,6 @@
 import { ITeamModel } from '../models/team.model';
 import { Injectable } from '@angular/core';
-import { IMatchupModel } from '../models/matchup.model';
+import {IMatchupModel, MatchupModel} from '../models/matchup.model';
 
 @Injectable()
 export class TeamService {
@@ -8,10 +8,10 @@ export class TeamService {
       const array = teams;
       let team;
       let team2;
-      let matchup: IMatchupModel = [];
       const matchups = [];
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i <= 16; i++) {
+        let matchup: MatchupModel = new MatchupModel();
         if (array.length !== 0) {
           team = this.getRandomTeam(array);
           team2 = this.getRandomTeam(array);
@@ -20,12 +20,19 @@ export class TeamService {
           matchup.homeTeam = team;
           matchup.awayTeam = team2;
           if (matchup) {
+            matchup.id = i;
             matchups.push(matchup);
-            matchup = [];
+            matchup = null;
           }
         }
       }
       return matchups;
+    }
+
+    getMatchup(id: number) { // ToDo: this just creates a new matchup instead of retrieving the already created or retrieved one, fix this.
+      const teams = this.getTeams();
+      const matchups = this.getMatchUps(teams);
+      return matchups.find(matchup => matchup.id === id);
     }
 
     private getRandomTeam(array): ITeamModel {

@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { TeamService } from './shared/services/team.service';
 import { IMatchupModel } from './shared/models/matchup.model';
+import { IUserModel } from './shared/models/user.model';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -9,26 +10,18 @@ import { IMatchupModel } from './shared/models/matchup.model';
     styleUrls: ['./pick-em-app.component.scss']
 })
 export class PickEmAppComponent implements OnInit {
-  @Input() teams: any;
   title = 'Pick\'em';
   matchups: IMatchupModel[];
-  user = {
-        id: 1,
-        name: 'Nathan',
-        email: 'n.briscoe1@gmail.com',
-        isAdmin: true,
-        league: {
-            id: 123,
-            name: 'first season league name',
-        }
+  user: IUserModel = {
+      id: 1,
+      name: 'Nathan',
+      email: 'n.briscoe1@gmail.com',
+      password: '12345',
+      isAdmin: true,
     };
-  spread: number;
 
-  constructor(private teamService: TeamService) {
-    const teams = teamService.getTeams();
-    const test = teamService.getMatchUps(teams);
-    console.log('test: ', test);
-    this.matchups = test;
+  constructor() {
+
   }
 
   ngOnInit() {

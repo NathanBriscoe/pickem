@@ -1,20 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import { PickEmAppRoutingModule } from './pick-em-app-routing.module';
 import { PickEmAppComponent } from './pick-em-app.component';
-import { TeamListComponent } from './team-list.component';
+import { MatchupDetailsComponent } from './matchup-details/matchup-details.component';
+import { WeeklyMatchupsComponent } from './weekly-matchups/weekly-matchups.component';
+import { PickEmAppRoutingModule } from './pick-em-app-routing.module';
 import { TeamService } from './shared/services/team.service';
-import { MatchupContainerComponent } from './matchup-container/matchup-container.component';
+import { appRoutes } from './routes';
 
 @NgModule({
   declarations: [
     PickEmAppComponent,
-    TeamListComponent,
-    MatchupContainerComponent
+    MatchupDetailsComponent,
+    WeeklyMatchupsComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     PickEmAppRoutingModule
   ],
   providers: [TeamService],
