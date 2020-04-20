@@ -9,20 +9,26 @@ import { PickEmAppRoutingModule } from './pick-em-app-routing.module';
 import { TeamService } from './shared/services/team.service';
 import { appRoutes } from './routes';
 import { HeaderComponent } from './header/header.component';
+import { MatchupService } from './shared/services/matchup.service';
+import { CreateWeekMatchupsComponent } from './create-week-matchups/create-week-matchups.component';
 
 @NgModule({
   declarations: [
     PickEmAppComponent,
     MatchupDetailsComponent,
     WeeklyMatchupsComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateWeekMatchupsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     PickEmAppRoutingModule
   ],
-  providers: [TeamService],
+  providers: [
+    TeamService,
+    MatchupService
+  ],
   bootstrap: [PickEmAppComponent]
 })
 export class PickEmAppModule { }

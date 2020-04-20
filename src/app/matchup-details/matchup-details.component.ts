@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IMatchupModel } from '../shared/models/matchup.model';
-import { TeamService } from '../shared/services/team.service';
+import { ActivatedRoute } from '@angular/router';
+import { MatchupService } from '../shared/services/matchup.service';
 
 @Component({
   selector: 'app-matchup-details',
@@ -10,12 +11,13 @@ import { TeamService } from '../shared/services/team.service';
 export class MatchupDetailsComponent implements OnInit {
   @Input() matchup: IMatchupModel;
   selectedMatchUp: IMatchupModel;
-  constructor(private teamService: TeamService) {
-    this.selectedMatchUp = this.teamService.getMatchup(4); // ToDo: hard coded for now, will need to get this from the url later
+  constructor(private matchupService: MatchupService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    console.log('matchup: ', this.matchup);
+    this.selectedMatchUp = this.matchupService.getMatchup(
+      +this.route.snapshot.params['id']
+    ); // ToDo: hard coded for now, will need to get this from the url later
   }
-
 }

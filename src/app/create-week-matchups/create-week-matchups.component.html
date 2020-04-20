@@ -1,0 +1,18 @@
+<p>create-week-matchups works!</p>
+<div *ngFor="let team of teams">
+  <span>{{team.name}}</span>
+</div>
+<span>Create new Match up!</span>
+<button (click)="onCreateNewMatchup()">+</button>
+<form *ngIf="toggle">
+  <label> Favorite:
+    <input>
+  </label>
+  <label> Underdog:
+    <input>
+  </label>
+  <label> Spread:
+    <input>
+  </label>
+  <button (click)="onCreateNewMatchup()">Submit</button>
+</form>
