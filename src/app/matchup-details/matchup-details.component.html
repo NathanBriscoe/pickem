@@ -1,6 +1,17 @@
-<span>{{matchup?.homeTeam.name}}</span>
-<span>{{matchup?.spread}}</span>
-<span>{{matchup?.awayTeam.name}}</span>
-=
-<span>{{matchup?.location}}</span>
+<div class="matchup-layout">
+  <header>
+    <span>{{matchupTitle}}</span>
+    <span class="date">{{todaysDate}}</span>
+  </header>
+  <div class="away-team">
+    <span>{{matchup?.awayTeam.name}}</span>
+  </div>
+  <div class="box-score">
+    <span>{{matchup?.spread}}</span>
+    <span>{{matchup?.location}}</span>
+  </div>
+  <div class="home-team">
+    <span>{{matchup?.homeTeam.name}}</span>
+  </div>
+</div>
 

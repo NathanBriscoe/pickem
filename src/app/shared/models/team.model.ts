@@ -4,6 +4,8 @@ export interface ITeamModel {
   id: number;
   name: string;
   state: string;
+  conference: string;
+  division: string;
   shortName: string;
   imageUrl: string;
   isHome: boolean;

@@ -1,1 +1,41 @@
-<app-matchup-details *ngFor="let matchup of matchups" [matchup]="matchup"></app-matchup-details>
+<div class="nfc">
+  <h1>NFC</h1>
+  <div class="north">
+    <h2>North</h2>
+    <div *ngFor="let team of NFCNorthTeams">{{team.shortName}}</div>
+  </div>
+  <div class="east">
+    <h2>East</h2>
+    <div *ngFor="let team of NFCEastTeams">{{team.shortName}}</div>
+  </div>
+  <div class="west">
+    <h2>West</h2>
+    <div *ngFor="let team of NFCWestTeams">{{team.shortName}}</div>
+  </div>
+  <div class="south">
+    <h2>South</h2>
+    <div *ngFor="let team of NFCSouthTeams">{{team.shortName}}</div>
+  </div>
+</div>
+<div class="matchup-container">
+  <app-matchup-details *ngFor="let matchup of matchups" [matchup]="matchup"></app-matchup-details>
+</div>
+<div class="afc">
+  <h1>AFC</h1>
+  <div class="north">
+    <h2>North</h2>
+    <div *ngFor="let team of AFCNorthTeams">{{team.shortName}}</div>
+  </div>
+  <div class="east">
+    <h2>East</h2>
+    <div *ngFor="let team of AFCEastTeams">{{team.shortName}}</div>
+  </div>
+  <div class="west">
+    <h2>West</h2>
+    <div *ngFor="let team of AFCWestTeams">{{team.shortName}}</div>
+  </div>
+  <div class="south">
+    <h2>South</h2>
+    <div *ngFor="let team of AFCSouthTeams">{{team.shortName}}</div>
+  </div>
+</div>

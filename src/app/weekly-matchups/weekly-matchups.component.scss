@@ -1,4 +1,22 @@
 :host {
   display: flex;
-  flex-direction: column;
+  background-color: lightcyan;
+  padding: 15px;
+  align-items: inherit;;
+  .nfc {
+    background-color: lightsalmon;
+    width: 20%;
+  }
+  .matchup-container {
+    background-color: lightgreen;
+    width: 60%;
+  }
+  .afc {
+    background-color: teal;
+    width: 20%;
+  }
+  app-matchup-details {
+    display: flex;
+    justify-content: center;
+  }
 }
