@@ -5,15 +5,20 @@
   align-items: inherit;;
   .nfc {
     background-color: lightsalmon;
-    width: 20%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .matchup-container {
-    background-color: lightgreen;
-    width: 60%;
+    width: 70%;
   }
   .afc {
     background-color: teal;
-    width: 20%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   app-matchup-details {
     display: flex;

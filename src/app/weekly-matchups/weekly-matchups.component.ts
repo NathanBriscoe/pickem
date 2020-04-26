@@ -24,25 +24,33 @@ export class WeeklyMatchupsComponent implements OnInit {
       this.teams = TeamService.getTeams();
       this.teams.map(team => {
         console.log('team: ' , team);
-        if (team.conference === 'NFC'){
+        if (team.conference !== 'NFC') {
           switch (team.division) {
-            case 'North': this.NFCNorthTeams.push(team);
+            case 'North':
+              this.AFCNorthTeams.push(team);
               break;
-            case 'East': this.NFCEastTeams.push(team);
+            case 'East':
+              this.AFCEastTeams.push(team);
               break;
-            case 'West': this.NFCWestTeams.push(team);
+            case 'West':
+              this.AFCWestTeams.push(team);
               break;
-            case 'South': this.NFCSouthTeams.push(team);
+            case 'South':
+              this.AFCSouthTeams.push(team);
           }
         } else {
           switch (team.division) {
-            case 'North': this.AFCNorthTeams.push(team);
+            case 'North':
+              this.NFCNorthTeams.push(team);
               break;
-            case 'East': this.AFCEastTeams.push(team);
+            case 'East':
+              this.NFCEastTeams.push(team);
               break;
-            case 'West': this.AFCWestTeams.push(team);
+            case 'West':
+              this.NFCWestTeams.push(team);
               break;
-            case 'South': this.AFCSouthTeams.push(team);
+            case 'South':
+              this.NFCSouthTeams.push(team);
           }
         }
       });
